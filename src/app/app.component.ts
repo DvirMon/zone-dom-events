@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'zone-dom-events';
-}
+  #router = inject(Router)
+
+  readonly paths = this.#router.config.
+    map(({ path, title }) => ({ path: '/' + path, title })).slice(0,  this.#router.config.length - 1)
+
+ }

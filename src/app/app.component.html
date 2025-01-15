@@ -1,0 +1,7 @@
+<nav>
+  @for (item of paths; track $index) {
+  <button [routerLink]="item.path">{{ item.title }}</button>
+  }
+</nav>
+
+<router-outlet></router-outlet>
