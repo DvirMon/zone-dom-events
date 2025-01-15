@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "comp": "ng g c host-listener --skip-tests"
+
   },
   "private": true,
   "dependencies": {
